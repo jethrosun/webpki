@@ -22,7 +22,7 @@
 #![doc(html_root_url = "https://briansmith.org/rustdoc/")]
 #![allow(missing_debug_implementations)]
 // `#[derive(...)]` uses `#[allow(unused_qualifications)]` internally.
-#![deny(unused_qualifications)]
+//#![deny(unused_qualifications)]
 #![forbid(
     anonymous_parameters,
     box_pointers,
@@ -38,11 +38,13 @@
     variant_size_differences
 )]
 
-#[cfg(any(test, feature = "trust_anchor_util"))]
-#[macro_use(format)]
-extern crate std;
-
+// #[cfg(any(test, feature = "trust_anchor_util"))]
+// #[macro_use(format)]
+// extern crate std;
+//
 extern crate ring;
+
+extern crate core;
 
 #[cfg(test)]
 extern crate base64;
