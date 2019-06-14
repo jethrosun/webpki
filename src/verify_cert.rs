@@ -177,12 +177,18 @@ fn check_validity(input: &mut untrusted::Reader, time: time::Time) -> Result<(),
     let not_after = der::time_choice(input)?;
 
     if not_before > not_after {
+        println!("Not before: {:?}", not_before);
+        println!("Not after: {:?}", not_after);
         return Err(Error::InvalidCertValidity);
     }
     if time < not_before {
+        println!("Not before: {:?}", not_before);
+        println!("Not after: {:?}", not_after);
         return Err(Error::CertNotValidYet);
     }
     if time > not_after {
+        println!("Not before: {:?}", not_before);
+        println!("Not after: {:?}", not_after);
         return Err(Error::CertExpired);
     }
 
