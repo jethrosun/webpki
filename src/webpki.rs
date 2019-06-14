@@ -20,7 +20,6 @@
 //! processing steps necessary for a TLS connection.
 
 #![doc(html_root_url = "https://briansmith.org/rustdoc/")]
-#![no_std]
 #![allow(missing_debug_implementations)]
 // `#[derive(...)]` uses `#[allow(unused_qualifications)]` internally.
 #![deny(unused_qualifications)]
